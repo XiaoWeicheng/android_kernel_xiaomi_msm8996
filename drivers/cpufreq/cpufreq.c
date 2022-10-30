@@ -2424,37 +2424,37 @@ static int cpufreq_set_policy(struct cpufreq_policy *policy,
 	struct cpufreq_governor *old_gov;
 	int ret;
 
-#ifdef CONFIG_ARCH_MSM8996
-    if (enable_underclock_balanced)
-    {
-        if (new_policy->cpu > 1)
-        {
-            if (new_policy->max > UNDERCLK_MAX_BIGCL_BALANCED)
-                new_policy->max = UNDERCLK_MAX_BIGCL_BALANCED;
-        }
-
-        if (new_policy->cpu < 2)
-        {
-            if (new_policy->max > UNDERCLK_MAX_LITTLECL_BALANCED)
-                new_policy->max = UNDERCLK_MAX_LITTLECL_BALANCED;
-        }
-    }
-
-    else if (enable_underclock_battery)
-    {
-        if (new_policy->cpu > 1)
-        {
-            if (new_policy->max > UNDERCLK_MAX_BIGCL_BATTERY)
-                new_policy->max = UNDERCLK_MAX_BIGCL_BATTERY;
-        }
-
-        if (new_policy->cpu < 2)
-        {
-            if (new_policy->max > UNDERCLK_MAX_LITTLECL_BATTERY)
-                new_policy->max = UNDERCLK_MAX_LITTLECL_BATTERY;
-        }
-    }
-#endif
+//#ifdef CONFIG_ARCH_MSM8996
+//    if (enable_underclock_balanced)
+//    {
+//        if (new_policy->cpu > 1)
+//        {
+//            if (new_policy->max > UNDERCLK_MAX_BIGCL_BALANCED)
+//                new_policy->max = UNDERCLK_MAX_BIGCL_BALANCED;
+//        }
+//
+//        if (new_policy->cpu < 2)
+//        {
+//            if (new_policy->max > UNDERCLK_MAX_LITTLECL_BALANCED)
+//                new_policy->max = UNDERCLK_MAX_LITTLECL_BALANCED;
+//        }
+//    }
+//
+//    else if (enable_underclock_battery)
+//    {
+//        if (new_policy->cpu > 1)
+//        {
+//            if (new_policy->max > UNDERCLK_MAX_BIGCL_BATTERY)
+//                new_policy->max = UNDERCLK_MAX_BIGCL_BATTERY;
+//        }
+//
+//        if (new_policy->cpu < 2)
+//        {
+//            if (new_policy->max > UNDERCLK_MAX_LITTLECL_BATTERY)
+//                new_policy->max = UNDERCLK_MAX_LITTLECL_BATTERY;
+//        }
+//    }
+//#endif
 
 	pr_debug("setting new policy for CPU %u: %u - %u kHz\n",
 		 new_policy->cpu, new_policy->min, new_policy->max);
