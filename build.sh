@@ -528,8 +528,8 @@ elif [ -e build.sh ]; then
 		kernelpatchlevel=$(cat Makefile | grep PATCHLEVEL | cut -c 14- | head -1)
 		kernelsublevel=$(cat Makefile | grep SUBLEVEL | cut -c 12- | head -1)
 		kernelname=$(cat Makefile | grep NAME | cut -c 8- | head -1)
-		release=$(date +%d""%m""%Y)
-		releasewithbar=$(date +%d"/"%m"/"%Y)
+		release=$(date +%Y%m%d%H%M)
+		releasewithbar=$(date +%Y-%m-%dT%H:%M)
 		build=$(cat .version)
 		export zipfile="${customkernel}-${name}-${variant}-${release}-${ToolchainName}-${androidversion}-${romversion}.zip"
 		buildsh
